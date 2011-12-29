@@ -33,7 +33,7 @@ To speed things up, the results are cached in local .rake_tasks~ and
 .cap_tasks~. It is smart enough to expire the cache automatically in
 most cases, but you can simply remove the files to flush the cache.
 
-I switch bash to [vi-mode][3] which mught be a bit wierd for some.
+I switch bash to [vi-mode][3] which might be a bit weird for some.
 
 If you're using git, you'll notice the current branch name shows up in
 the prompt while in a git repository.
@@ -45,13 +45,13 @@ loaded automatically if it exists.
 Vim
 ---
 I use [Janus][4] to keep track of my Vim configuration.  It's included as a
-sub-module of this repository. and has to be installed seperatly.
+sub-module of this repository and has to be installed separately.
 
     cd ~/.vim
     rake
 
 You can place any custom plugins in `~/.janus`, and use the `.vimrc.before`,
-`.vimrm.after`, `.gvimrc.before`, and `.gvimrc.after` files for furthur
+`.vimrm.after`, `.gvimrc.before`, and `.gvimrc.after` files for further
 customization.
 
 irb
@@ -59,18 +59,18 @@ irb
 I rely on a set of tools for irb called '[irbtools][5]' which are packaged up
 in a meta-gem -- install it with `gem install irbtools`.
 
-Miscelaneous scripts
+Miscellaneous scripts
 --------------------
 In the `~/.bin` directory
 
 * The mvim wrapper script
 * [Resty][6]
-* A little script to print out a visual direectory tree
+* A little script to print out a visual directory tree
 
 Other stuff
 -----------
 * Basic gemrc and rdebugrc files
-* Sensible git ang hg configs and global ignore files
+* Sensible git and hg configs and global ignore files
 * An inputrc with the [magic space][7]
 
 [1]: https://github.com/ryanb/dotfiles
