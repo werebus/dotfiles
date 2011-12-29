@@ -62,6 +62,7 @@ in a meta-gem -- install it with `gem install irbtools`.
 Miscelaneous scripts
 --------------------
 In the `~/.bin` directory
+
 * The mvim wrapper script
 * [Resty][6]
 * A little script to print out a visual direectory tree
