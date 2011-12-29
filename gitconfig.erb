@@ -2,14 +2,20 @@
 	name = <%= print("Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
 	email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
 [alias]
-	co = checkout
+	st = status
+	l  = log --pretty=oneline
+	ll = log
+	llg = log --graph
+	lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --graph
+	ro = !git fetch origin && git reset --hard origin/master
+	rank = shortlog -sn --no-merges
 [color]
 	diff = auto
 	status = auto
 	branch = auto
+    interactive = auto
 [core]
 	excludesfile = <%= ENV['HOME'] %>/.gitignore
-	editor = mate -w
 	autocrlf = input
 [apply]
 	whitespace = nowarn
