@@ -1,15 +1,25 @@
-. ~/.zsh/aliases
+function tab() {
+  osascript 2>/dev/null <<EOF
+  tell application "iTerm"
+    activate
 
-# changing directory to code project
-function c { cd ~/code/$1; }
+    tell the first terminal
 
-# alternative to "rails" command to use templates
-function railsapp {
-  template=$1
-  appname=$2
-  shift 2
-  rails $appname -m http://github.com/ryanb/rails-templates/raw/master/$template.rb $@
+      -- launch a default shell in a new tab in the same terminal
+      launch session "Default Session"
+
+      tell the last session
+
+        -- write some text
+        write text "cd \"$PWD\"; $*\n"
+      end tell
+    end tell
+  end tell
+EOF
 }
 
-# misc
-alias reload='. ~/.bash_profile'
+# showTimes: show the modification, metadata-change, and access times of a file
+showTimes () { stat -f "%N:   %m %c %a" "$@" ; }
+
+# Highlight all occurances of a word in a file
+highlight () { text=$1 ; shift ; grep --color -E "$text|$" "$@" ; }

@@ -1,2 +1,28 @@
-export PS1="\w$ "
-export EDITOR="mate_wait"
+export CLICOLOR=true
+export PS1='\[\e]0;\W\007\e[32m\]\u@\h\[\e[39m\]:\[\e[34m\]$(shorten_path.py "$PWD" 20)\[\e[31m\]$(__git_ps1 " [%s]")\[\e[39m\]\$'
+export EDITOR='mvim -f -c "au VimLeave * !open -a iTerm"'
+
+#git display in PS1
+export GIT_PS1_SHOWDIRTYSTATE=1 #... untagged(*) and staged(+) changes
+export GIT_PS1_SHOWSTASHSTATE=1 #... if something is stashed($)
+export GIT_PS1_SHOWUNTRACKEDFILES=1 #... untracked files(%)
+
+#History monkeying
+shopt -s histappend
+export PROMPT_COMMAND='history -a'
+export HISTCONTROL='erasedups:ignorespace'
+export HISTTIMEFORMAT="%D %T "
+export HISTFILESIZE=20000
+export HISTSIZE=5000
+export HISTIGNORE='ls:history:exit'
+
+#Vi mode for bash
+set -o vi
+
+if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
+if [[ -s ~/.bin/resty ]] ; then source ~/.bin/resty ; fi
+# Use bash-completion, if available
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  . `brew --prefix`/etc/bash_completion
+fi
+
