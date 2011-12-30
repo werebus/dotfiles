@@ -1,4 +1,5 @@
-" No Scrollbars
+" No Toolbar, No Scrollbars
+set guioptions-=T
 set guioptions-=r
 set guioptions-=L
 "

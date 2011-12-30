@@ -7,7 +7,7 @@ there if you're looking to create your own version.
 Installation
 ============
 
-    git clone git://github.com/werebus/dotfiles ~/.dotfiles
+    git clone --recursive git://github.com/werebus/dotfiles ~/.dotfiles
     cd ~/.dotfiles
     rake install
 
@@ -39,7 +39,7 @@ If you're using git, you'll notice the current branch name shows up in
 the prompt while in a git repository.
 
 If there are some shell configuration settings which you want secure or
-specific to one system, place it into a ~/.localrc file. This will be
+specific to one system, place it into a `~/.localrc` file. This will be
 loaded automatically if it exists.
 
 Vim
