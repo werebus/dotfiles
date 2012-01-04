@@ -44,15 +44,12 @@ loaded automatically if it exists.
 
 Vim
 ---
-I use [Janus][4] to keep track of my Vim configuration.  It's included as a
-sub-module of this repository and has to be installed separately.
+My organization keeps its vim configuration in a [Seperate repository][4].
+It's included as a sub-module of this repository.
 
-    cd ~/.vim
-    rake
-
-You can place any custom plugins in `~/.janus`, and use the `.vimrc.before`,
-`.vimrm.after`, `.gvimrc.before`, and `.gvimrc.after` files for further
-customization.
+You can place any custom vim plugins in `~/.bundle`; they'll be loaded by
+pathogen. Use the `.vimrc.before`, `.vimrm.after`, `.gvimrc.before`, and
+`.gvimrc.after` files for further customization.
 
 irb
 ---
