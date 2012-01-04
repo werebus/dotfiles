@@ -7,6 +7,3 @@ let g:Tex_CompileRule_pdf='pdflatex -shell-escape -interaction=nonstopmode $*'
 
 " Show linenumbers on printouts; use letter paper (not A4)
 set printoptions=number:y,paper:letter
-
-" Undo the e => Edit abbreviation when ! is added
-cabbrev Edit! e!
