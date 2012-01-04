@@ -1,9 +1,3 @@
 [submodule "vim"]
 	path = vim
 	url = git://github.com/carlhuda/janus.git
-[submodule "janus/vim-chef"]
-	path = janus/vim-chef
-	url = git://github.com/t9md/vim-chef.git
-[submodule "janus/vim-latex"]
-	path = janus/vim-latex
-	url = git://github.com/mineiro/vim-latex.git
