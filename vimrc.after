@@ -2,6 +2,9 @@ set showcmd
 
 set grepprg=grep\ -nH\ $*
 
+" Really, really, write the file (did you forget to sudo?)
+cmap w!! w !sudo tee % >/dev/null
+
 let g:tex_flavor='latex'
 let g:Tex_CompileRule_pdf='pdflatex -shell-escape -interaction=nonstopmode $*'
 
