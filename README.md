@@ -73,7 +73,7 @@ Other stuff
 [1]: https://github.com/ryanb/dotfiles
 [2]: https://github.com/robbyrussell/oh-my-zsh
 [3]: http://www.catonmat.net/blog/bash-vi-editing-mode-cheat-sheet/
-[4]: https://github.com/carlhuda/janus
+[4]: https://github.com/umasstransit/vimfiles
 [5]: http://rbjl.net/40-irbtools-release-the-power-of-irb
 [6]: https://github.com/micha/resty
 [7]: http://codesnippets.joyent.com/posts/show/2301
