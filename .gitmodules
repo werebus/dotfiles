@@ -7,3 +7,6 @@
 [submodule "bundle/latex"]
 	path = bundle/latex
 	url = git://github.com/mineiro/vim-latex.git
+[submodule "bundle/sparkup"]
+	path = bundle/sparkup
+	url = git://github.com/rstacruz/sparkup.git
