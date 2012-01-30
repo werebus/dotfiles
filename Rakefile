@@ -1,12 +1,26 @@
 require 'rake'
 require 'erb'
 
+# The user will be prompted for each of these using the hash values and
+# the result will be available in .erb templates as @config[:key_name]
+USER_VARS = {
+  :full_name => "Full Name",
+  :email => "Email Address",
+  :github_user => "GitHub Username",
+  :github_token => "Github API Token"
+}
+
 desc "install the dot files into user's home directory"
 task :install do
   replace_all = false
+  @config = {}
+  USER_VARS.each do |key, name|
+    @config[key] = ask(name)
+  end
+
   Dir['*'].each do |file|
     next if %w[Rakefile README.md LICENSE].include? file
-    
+
     if File.exist?(File.join(ENV['HOME'], ".#{file.sub('.erb', '')}"))
       if File.identical? file, File.join(ENV['HOME'], ".#{file.sub('.erb', '')}")
         puts "identical ~/.#{file.sub('.erb', '')}"
@@ -47,4 +61,10 @@ def link_file(file)
     puts "linking ~/.#{file}"
     system %Q{ln -s "$PWD/#{file}" "$HOME/.#{file}"}
   end
+end
+
+def ask(description)
+  print "Enter Your #{description}: "
+  STDOUT.flush
+  STDIN.gets.chomp
 end

@@ -1,26 +1,24 @@
 [user]
-	name = <%= print("Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
-	email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
+  name = <%= @config[:full_name] %>
+  email = <%= @config[:email] %>
 [alias]
-	st = status
-	l  = log --pretty=oneline
-	ll = log
-	llg = log --graph
-	lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --graph
-	ro = !git fetch origin && git reset --hard origin/master
-	rank = shortlog -sn --no-merges
+  st = status
+  l  = log --pretty=oneline
+  ll = log
+  llg = log --graph
+  lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --graph
+  ro = !git fetch origin && git reset --hard origin/master
+  rank = shortlog -sn --no-merges
 [color]
-	diff = auto
-	status = auto
-	branch = auto
-    interactive = auto
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
 [core]
-	excludesfile = <%= ENV['HOME'] %>/.gitignore
-	autocrlf = input
+  excludesfile = <%= ENV['HOME'] %>/.gitignore
+  autocrlf = input
 [apply]
-	whitespace = nowarn
-[format]
-	pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
+  whitespace = nowarn
 [github]
-	user = <%= print("GitHub Username: "); STDOUT.flush; STDIN.gets.chomp %>
-	token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>
+  user = <%= @config[:github_user] %>
+  token = <%= @config[:github_token] %>
