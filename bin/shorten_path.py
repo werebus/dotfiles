@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 import sys
 import os
 import re
@@ -23,7 +23,7 @@ while len(path) > length:
             max_index  = i
             max_length = len(dirs[i])
 
-    # Shorten it by one character.    
+    # Shorten it by one character.
     if max_index >= 0:
         dirs[max_index] = dirs[max_index][:max_length-3] + ".."
         path = "/".join(dirs)
