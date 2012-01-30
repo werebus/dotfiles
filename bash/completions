@@ -1,3 +1,19 @@
+# Hunt down bash-completion:
+# Linux Standard:
+if [ -f /etc/bash_completion ]; then
+  source /etc/bash_completion
+fi
+# From source / BSD:
+if [ -f /usr/local/etc/bash_completion ]; then
+  source /usr/local/etc/bash_completion
+fi
+# Homebrew:
+if which brew > /dev/null; then
+  if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
+  fi
+fi
+
 source ~/.bash/completion_scripts/git_completion
 complete -C ~/.bash/completion_scripts/rake_completion -o default rake
 complete -C ~/.bash/completion_scripts/capistrano_completion -o default cap
