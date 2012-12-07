@@ -1,3 +1,4 @@
+<% require 'rbconfig' %>
 [user]
   name = <%= @config[:full_name] %>
   email = <%= @config[:email] %>
@@ -22,3 +23,7 @@
 [github]
   user = <%= @config[:github_user] %>
   token = <%= @config[:github_token] %>
+<% if RbConfig::CONFIG['host_os'] =~ /darwin/ %>
+[credential]
+  helper = osxkeychain
+<% end %>
