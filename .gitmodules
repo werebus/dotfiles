@@ -10,3 +10,6 @@
 [submodule "bundle/sparkup"]
 	path = bundle/sparkup
 	url = git://github.com/rstacruz/sparkup.git
+[submodule "bundle/mediawiki"]
+	path = bundle/mediawiki
+	url = git://github.com/vim-scripts/mediawiki.vim.git
