@@ -1,1 +1,7 @@
-export PATH="~/bin:~/.bin:~/Developer/bin:$PATH"
+if which brew > /dev/null; then
+  HB=`brew --prefix`
+else
+  HB="$HOME/Developer"
+fi
+
+export PATH="$HOME/bin:$HB/bin:$HB/share/python:$HOME/.rvm/bin:$PATH"
