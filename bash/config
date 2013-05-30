@@ -1,10 +1,15 @@
 export CLICOLOR=true
 export PS1='\[\e]0;\W\007\e[32m\]\u@\h\[\e[39m\]:\[\e[34m\]$(shorten_path.py "$PWD" 20)\[\e[31m\]$(__git_ps1 " [%s]")\[\e[39m\]\$'
-if which mvim > /dev/null; then
-  export EDITOR='mvim -f -c "au VimLeave * !open -a iTerm"'
-else
-  export EDITOR='vim'
-fi
+
+export AWS_CONFIG_FILE=$HOME/.awsconfig
+
+export EDITOR='vim'
+for i in ~/Applications ~/Applications/vim /Applications /Applications/vim /Applications/Utilities /Applications/Utilities/vim; do
+  if [ -x "$i/MacVim.app" ]; then
+    export EDITOR='mvim -f -c "au VimLeave * !open -a iTerm"'
+    break
+  fi
+done
 
 #git display in PS1
 export GIT_PS1_SHOWDIRTYSTATE=1 #... untagged(*) and staged(+) changes
