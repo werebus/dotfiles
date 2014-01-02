@@ -23,6 +23,8 @@
 [github]
   user = <%= @config[:github_user] %>
   token = <%= @config[:github_token] %>
+[help]
+  autocorrect = 20
 <% if RbConfig::CONFIG['host_os'] =~ /darwin/ %>
 [credential]
   helper = osxkeychain
