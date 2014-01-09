@@ -1,0 +1,14 @@
+set nocompatible
+set backspace=indent,eol,start
+filetype plugin indent on
+ 
+set history=50
+set ruler
+set number
+set showcmd
+set incsearch
+ 
+if &t_Co > 2
+  syntax on
+  set hlsearch
+endif
