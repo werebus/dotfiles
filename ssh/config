@@ -1,0 +1,43 @@
+Host app1
+  Hostname transit-app1.admin.umass.edu
+  Port 1022
+
+Host db1
+  Hostname transit-db1.admin.umass.edu
+
+Host file1
+  Hostname transit-file1.admin.umass.edu
+  Port 1022
+
+Host dev
+  Hostname transit-dev.admin.umass.edu
+
+Host demo
+  Hostname transit-demo.admin.umass.edu
+
+Host home
+  Hostname wereb.us
+
+Host oit
+  Hostname webadmin.oit.umass.edu
+  User transit
+
+Host dieselnet
+  Hostname dieselnet.cs.umass.edu
+  Port 1022
+
+Host vs1
+  Hostname transit-vs1.admin.umass.edu
+  User root
+
+Host vs2
+  Hostname transit-vs2.admin.umass.edu
+  User root
+
+Host stewarts
+  Hostname ssh.phx.nearlyfreespeech.net
+  User werebus_stewarts
+
+Host mmvu
+  Hostname ssh.phx.nearlyfreespeech.net
+  User werebus_mmvu
