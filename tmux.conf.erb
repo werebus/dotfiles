@@ -1,3 +1,10 @@
+<% require 'rbconfig' %>
+<% if RbConfig::CONFIG['host_os'] =~ /darwin/ %>
+# Make stuff like pasteboard and launchctl work
+# `brew install reattach-to-user-namespace`
+set -g default-command "reattach-to-user-namespace -l $SHELL"
+<% end %>
+
 # 256 Colors
 set -g default-terminal "screen-256color"
 
