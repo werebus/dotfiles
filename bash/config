@@ -23,4 +23,6 @@ export HISTIGNORE='ls:history:exit'
 set -o vi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-if [[ -s ~/.bin/resty ]] ; then source ~/.bin/resty ; fi
+if which direnv > /dev/null 2>&1; then
+  eval "$(direnv hook $0)"
+fi
