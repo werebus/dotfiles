@@ -24,7 +24,7 @@ Bash configuration
 Bash configuration is parceled out into various files in the `~/.bash`
 directory.
 
-Tab completion is also added to rake and cap commands:
+Tab completion is also added to knife, rake, and cap commands:
 
     rake db:mi<tab>
     cap de<tab>
@@ -61,8 +61,8 @@ Miscellaneous scripts
 In the `~/.bin` directory
 
 * The mvim wrapper script
-* [Resty][6]
 * A little script to print out a visual directory tree
+* [hr][6]
 
 Other stuff
 -----------
@@ -75,5 +75,5 @@ Other stuff
 [3]: http://www.catonmat.net/blog/bash-vi-editing-mode-cheat-sheet/
 [4]: https://github.com/umasstransit/vimfiles
 [5]: http://rbjl.net/40-irbtools-release-the-power-of-irb
-[6]: https://github.com/micha/resty
+[6]: https://github.com/LuRsT/hr
 [7]: http://codesnippets.joyent.com/posts/show/2301
