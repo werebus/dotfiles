@@ -10,6 +10,10 @@ set -g default-command "reattach-to-user-namespace -l $SHELL"
 # 256 Colors
 set -g default-terminal "screen-256color"
 
+# Start numbering with 1
+set -g base-index 1
+set -g pane-base-index 1
+
 # remap prefix to Control + a
 set -g prefix C-a
 unbind C-b
