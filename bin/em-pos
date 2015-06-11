@@ -1,0 +1,38 @@
+#!/bin/bash
+# Get the ID for the tablet and other output
+for output in $(xrandr | grep '\Wconnected' | awk '{ print $1 }'); do
+  if [[ $output =~ ^eDP.*$ ]]; then
+    tab=$output
+  else
+    other=$output
+  fi
+done
+
+# If $other has any letters in it
+if [[ $other =~ [A-Za-z] ]]; then
+  case "$1" in
+    mirror)
+      xrandr --output $other --auto --same-as $tab
+      ;;
+    left)
+      xrandr --output $other --auto --left-of $tab
+      ;;
+    below)
+      xrandr --output $other --auto --below $tab
+      ;;
+    above)
+      xrandr --output $other --auto --above $tab
+      ;;
+    right)
+      xrandr --output $other --auto --right-of $tab
+      ;;
+  esac
+fi
+
+# Assign the touchscreen to the touchscreen
+for inputid in $(xinput list | grep 'NTRG' | cut -c 55-56); do
+  xinput --map-to-output $inputid $tab
+done
+
+# Re-do wallpaper
+feh --no-fehbg --bg-fill --randomize /home/matt/wallpaper
