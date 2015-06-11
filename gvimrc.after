@@ -4,12 +4,13 @@ set guioptions-=r
 set guioptions-=L
 "
 " Prety font
-set guifont=Inconsolata:h14
+if has("gui_macvim")
+  set guifont=Inconsolata:h14
+else
+  set guifont=Inconsolata\ Medium\ 20
+endif
 
 color jellybeans+
-
-" A little transperancy (disabled until the ghosting goes away)
-set transparency=0
 
 " A slightly bigger default window
 set lines=35
