@@ -21,11 +21,10 @@
   autocrlf = input
 [apply]
   whitespace = nowarn
-[github]
-  user = <%= @config[:github_user] %>
-  token = <%= @config[:github_token] %>
 [help]
   autocorrect = 20
+[push]
+  default = simple
 <% if RbConfig::CONFIG['host_os'] =~ /darwin/ %>
 [credential]
   helper = osxkeychain

@@ -5,9 +5,7 @@ require 'erb'
 # the result will be available in .erb templates as @config[:key_name]
 USER_VARS = {
   :full_name => "Full Name",
-  :email => "Email Address",
-  :github_user => "GitHub Username",
-  :github_token => "Github API Token"
+  :email => "Email Address"
 }
 
 desc "install the dot files into user's home directory"
