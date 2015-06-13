@@ -11,7 +11,7 @@ from os.path import abspath, basename, isdir
 from sys import argv
 
 def tree(dir, padding, print_files=False):
-    print padding[:-1] + '+-' + basename(abspath(dir)) + '/'
+    print(padding[:-1] + '+-' + basename(abspath(dir)) + '/')
     padding = padding + ' '
     files = []
     if print_files:
@@ -21,7 +21,7 @@ def tree(dir, padding, print_files=False):
     count = 0
     for file in files:
         count += 1
-        print padding + '|'
+        print(padding + '|')
         path = dir + sep + file
         if isdir(path):
             if count == len(files):
@@ -29,7 +29,7 @@ def tree(dir, padding, print_files=False):
             else:
                 tree(path, padding + '|', print_files)
         else:
-            print padding + '+-' + file
+            print(padding + '+-' + file)
 
 def usage():
     return '''Usage: %s [-f] <PATH>
@@ -40,23 +40,23 @@ PATH    Path to process''' % basename(argv[0])
 
 def main():
     if len(argv) == 1:
-        print usage()
+        print(usage())
     elif len(argv) == 2:
         # print just directories
         path = argv[1]
         if isdir(path):
             tree(path, ' ')
         else:
-            print 'ERROR: \'' + path + '\' is not a directory'
+            print('ERROR: \'' + path + '\' is not a directory')
     elif len(argv) == 3 and argv[1] == '-f':
         # print directories and files
         path = argv[2]
         if isdir(path):
             tree(path, ' ', True)
         else:
-            print 'ERROR: \'' + path + '\' is not a directory'
+            print('ERROR: \'' + path + '\' is not a directory')
     else:
-        print usage()
+        print(usage())
 
 if __name__ == '__main__':
     main()
