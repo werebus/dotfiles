@@ -4,9 +4,6 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:Inconsolata 18
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
@@ -67,9 +64,6 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-# focus the child container
-#bindsym $mod+d focus child
-
 # switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
@@ -99,41 +93,18 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-# media keys
-# Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
-
-# Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
-
-# Media player controls
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
         bindsym semicolon resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
@@ -153,18 +124,6 @@ mode "$mode_system" {
         bindsym Escape mode "default"
 }
 bindsym $mod+Shift+p mode "$mode_system"
-
-mode "external" {
-        bindsym m exec --no-startup-id /home/matt/.bin/em-pos mirror, mode "default"
-        bindsym Left exec --no-startup-id /home/matt/.bin/em-pos left, mode "default"
-        bindsym Down exec --no-startup-id /home/matt/.bin/em-pos below, mode "default"
-        bindsym Up exec --no-startup-id /home/matt/.bin/em-pos above, mode "default"
-        bindsym Right exec --no-startup-id /home/matt/.bin/em-pos right, mode "default"
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-bindsym $mod+m mode "external"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
