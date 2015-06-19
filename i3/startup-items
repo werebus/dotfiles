@@ -1,0 +1,18 @@
+# Dex autolaunches .desktop files that are set to do so
+exec dex -ae i3
+
+# On-screen keyboard
+#exec --no-startup-id onboard
+for_window [class="Onboard"] floating enable
+
+# Wallpaper
+exec --no-startup-id feh --no-fehbg --bg-fill --randomize ~/wallpaper/
+
+# Screen lock
+exec --no-startup-id xautolock -time 40 -locker "i3lock"
+
+# Battery indicator
+exec --no-startup-id cbatticon --command-critical-level "systemctl hibernate" --low-level 15 --critical-level 5
+
+# Tap Control = Escape
+exec --no-startup-id xcape
