@@ -13,7 +13,7 @@ XF86MonBrightness{Up,Down}
 shift + XF86Audio{Raise,Lower}Volume
   xbacklight -{inc,dec} 20
 
-xF86Audio{Play,Next,Prev}
+XF86Audio{Play,Next,Prev}
   playerctl {play-pause,next,previous}
 
 super + m ; {m,Up,Right,Down,Left}
