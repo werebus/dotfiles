@@ -2,7 +2,7 @@ set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) re
 set $locker i3lock -c 19063a && sleep 1
 mode "$mode_system" {
         bindsym l exec --no-startup-id /home/matt/.bin/i3lock-wrap, mode "default"
-        bindsym e exec --no-startup-id /home/matt/.bin/em-pos mirror && i3-msg exit, mode "default"
+        bindsym e exec --no-startup-id i3-msg exit, mode "default"
         bindsym s exec --no-startup-id $locker && systemctl suspend, mode "default"
         bindsym h exec --no-startup-id $locker && systemctl hibernate, mode "default"
         bindsym r exec --no-startup-id systemctl reboot, mode "default"
