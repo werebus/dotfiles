@@ -1,6 +1,6 @@
 [submodule "vim"]
 	path = vim
-	url = https://github.com/umts/vimfiles.git
+	url = https://github.com/werebus/vimfiles.git
 [submodule "bundle/chef"]
 	path = bundle/chef
 	url = https://github.com/t9md/vim-chef.git
