@@ -1,18 +1,6 @@
 [submodule "vim"]
 	path = vim
 	url = https://github.com/werebus/vimfiles.git
-[submodule "bundle/chef"]
-	path = bundle/chef
-	url = https://github.com/t9md/vim-chef.git
-[submodule "bundle/latex"]
-	path = bundle/latex
-	url = git://github.com/mineiro/vim-latex.git
-[submodule "bundle/sparkup"]
-	path = bundle/sparkup
-	url = git://github.com/rstacruz/sparkup.git
 [submodule "bundle/mediawiki"]
 	path = bundle/mediawiki
 	url = git://github.com/vim-scripts/mediawiki.vim.git
-[submodule "bundle/gitgutter"]
-	path = bundle/gitgutter
-	url = git://github.com/airblade/vim-gitgutter.git
