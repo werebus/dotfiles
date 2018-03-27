@@ -1,4 +1,0 @@
-#!/bin/sh
-killall -SIGUSR1 dunst
-i3lock --nofork --color=19063a
-killall -SIGUSR2 dunst
