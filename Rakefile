@@ -16,8 +16,8 @@ task :install do
     @config[key] = ask(name)
   end
 
-  Dir['*'].each do |file|
-    next if %w[Rakefile README.md LICENSE].include? file
+  Dir['*', 'config/*'].each do |file|
+    next if %w[Rakefile README.md LICENSE config].include? file
 
     if File.exist?(File.join(ENV['HOME'], ".#{file.sub(/\.erb$/, '')}"))
       if File.identical? file, File.join(ENV['HOME'], ".#{file.sub(/\.erb$/, '')}")

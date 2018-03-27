@@ -1,0 +1,6 @@
+[Unit]
+Description=Change wallpaper to a random image in a folder
+
+[Service]
+Type=oneshot
+ExecStart=-/usr/sbin/feh --no-fehbg --bg-fill --randomize %h/wallpaper

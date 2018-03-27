@@ -1,0 +1,5 @@
+[Desktop Entry]
+Exec=/usr/bin/xcape
+Name=xcape
+Comment=use a modifier key as another key
+Type=Application

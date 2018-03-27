@@ -1,0 +1,5 @@
+[Desktop Entry]
+Exec=/usr/bin/cbatticon
+Name=cbatticon
+Comment=a lightweight and fast battery icon that sits in your system tray
+Type=Application
