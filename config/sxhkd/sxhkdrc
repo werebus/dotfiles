@@ -1,25 +1,14 @@
-XF86Audio{Raise,Lower}Volume
-  amixer -D pulse sset Master on && \
-  amixer -D pulse sset Master 5%{+,-} && \
-  notify-send -t 500 "Volume" "$(amixer -D pulse | grep 'Left: Playback' | cut -d' ' -f 7)"
-
 XF86AudioMute
-  amixer -D pulse sset Master toggle && \
-  notify-send -t 500 "Sound" "$(amixer -D pulse | grep 'Left: Playback' | cut -d' ' -f 8)"
+  pulseaudio-ctl mute
+
+XF86Audio{Raise,Lower}Volume
+  pulseaudio-ctl {up,down}
+
+XF86AudioMicMute
+  pulseaudio-ctl mute-input
 
 XF86MonBrightness{Up,Down}
-  xbacklight -{inc,dec} 20
+  xbacklight -{inc,dec} 10 -steps 10
 
-shift + XF86Audio{Raise,Lower}Volume
-  xbacklight -{inc,dec} 20
-
-XF86Audio{Play,Next,Prev}
-  playerctl {play-pause,next,previous}
-
-super + m ; {m,Up,Right,Down,Left}
-  $HOME/.bin/em-pos {mirror,above,right,below,left} && \
-  feh --no-fehbg --bg-fill --randomize /home/matt/wallpaper
-
-super + m ; r
-  $HOME/bin/rotate && \
-  feh --no-fehbg --bg-fill --randomize /home/matt/wallpaper
+super + m ; {m,n,Up,Right,Down,Left}
+  $HOME/.bin/em-pos {mirror,none,above,right,below,left}
