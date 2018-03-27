@@ -1,0 +1,7 @@
+set autoindent
+set linenumbers
+set nowrap
+set tabsize 2
+set tabstospaces
+
+include "/usr/share/nano/*"
