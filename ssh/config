@@ -1,3 +1,5 @@
+AddKeysToAgent yes
+
 Host rtic
   Hostname transit-rtic.admin.umass.edu
 
@@ -14,16 +16,13 @@ Host file1
 Host app
   Hostname transit-demo.admin.umass.edu
 
-Host home
-  Hostname wereb.us
+Host app3
+  Hostname af-transit-app3.admin.umass.edu
+  ProxyCommand ssh -q -W %h:%p file1
 
-Host oit
-  Hostname webadmin.oit.umass.edu
-  User transit
-
-Host dieselnet
-  Hostname dieselnet.cs.umass.edu
-  Port 1022
+Host app4
+  Hostname af-transit-app4.admin.umass.edu
+  ProxyCommand ssh -q -W %h:%p file1
 
 Host vs1
   Hostname transit-vs1.admin.umass.edu
@@ -33,10 +32,6 @@ Host vs2
   Hostname transit-vs2.admin.umass.edu
   User root
 
-Host stewarts
-  Hostname ssh.phx.nearlyfreespeech.net
-  User werebus_stewarts
-
 Host mmvu
   Hostname ssh.phx.nearlyfreespeech.net
   User werebus_mmvu
@@ -44,8 +39,3 @@ Host mmvu
 Host lamdt
   Hostname ssh.phx.nearlyfreespeech.net
   User werebus_lamdt
-
-Host ite
-  Hostname defiant.ecs.umass.edu
-  User itestudent
-  RequestTTY yes
