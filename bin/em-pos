@@ -1,36 +1,45 @@
 #!/bin/bash
-# Get the ID for the tablet and other output
-for output in $(xrandr | grep '\Wconnected' | awk '{ print $1 }'); do
+case "$1" in
+  none)
+    for output in $(xrandr | awk '/^[^e].*connected/{ print $1 }'); do
+      xrandr --output $output --off
+    done
+    exit 0
+    ;;
+  "")
+    echo "usage: $0 (mirror|none|left|below|above|right)"
+    exit 1
+    ;;
+esac
+
+# Get the ID for the laptop and other output
+for output in $(xrandr | awk '/\Wconnected/{ print $1 }'); do
   if [[ $output =~ ^eDP.*$ ]]; then
-    tab=$output
+    internal=$output
   else
-    other=$output
+    external=$output
   fi
 done
 
-# If $other has any letters in it
-if [[ $other =~ [A-Za-z] ]]; then
+if [ -n "${external+x}" ]; then
   case "$1" in
     mirror)
-      xrandr --output $other --auto --same-as $tab
-      ;;
-    none)
-      xrandr --output $other --off
+      xrandr --output $external --auto --same-as $internal
       ;;
     left)
-      xrandr --output $other --auto --left-of $tab
+      xrandr --output $external --auto --left-of $internal
       ;;
     below)
-      xrandr --output $other --auto --below $tab
+      xrandr --output $external --auto --below $internal
       ;;
     above)
-      xrandr --output $other --auto --above $tab
+      xrandr --output $external --auto --above $internal
       ;;
     right)
-      xrandr --output $other --auto --right-of $tab
+      xrandr --output $external --auto --right-of $internal
       ;;
   esac
-fi
 
-# Re-do wallpaper
-#feh --no-fehbg --bg-fill --randomize /home/matt/wallpaper
+  # Re-do wallpaper
+  systemctl --user start rotate-wallpaper.service
+fi
