@@ -1,1 +1,1 @@
-./j4-make-config -a startup-items -r slate
+./j4-make-config -a startup-items -a system-menu -r slate

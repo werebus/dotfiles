@@ -1,0 +1,13 @@
+set $mode_system System (l) Lock, (e) Logout, (s) Suspend, (h) Hibernate, (r) Reboot, (p) Shutdown
+mode "$mode_system" {
+        bindsym l exec --no-startup-id xset s activate, mode "default"
+        bindsym e exec --no-startup-id i3-msg exit
+        bindsym s exec --no-startup-id systemctl suspend, mode "default"
+        bindsym h exec --no-startup-id systemctl hibernate, mode "default"
+        bindsym r exec --no-startup-id systemctl reboot
+        bindsym p exec --no-startup-id systemctl poweroff
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+Print mode "$mode_system"
