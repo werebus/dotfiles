@@ -27,6 +27,8 @@
   default = simple
 [init]
   templatedir = ~/.git_template
+[commit]
+  verbose = true
 <% if RbConfig::CONFIG['host_os'] =~ /darwin/ %>
 [credential]
   helper = osxkeychain
