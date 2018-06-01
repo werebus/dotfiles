@@ -7,6 +7,9 @@ XF86Audio{Raise,Lower}Volume
 XF86AudioMicMute
   pulseaudio-ctl mute-input
 
+XF86Audio{Prev,Next,Play}
+  playerctl {previous,next,play-pause}
+
 XF86MonBrightness{Up,Down}
   xbacklight -{inc,dec} 10 -steps 10
 
