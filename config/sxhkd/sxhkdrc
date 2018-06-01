@@ -15,3 +15,6 @@ XF86MonBrightness{Up,Down}
 
 super + m ; {m,n,Up,Right,Down,Left}
   $HOME/.bin/em-pos {mirror,none,above,right,below,left}
+
+Print
+  flameshot gui

@@ -102,7 +102,7 @@ URxvt*intensityStyles: false
 ! URxvt*pointerBlankDelay: number
 ! URxvt*backspacekey: string
 ! URxvt*deletekey: string
-! URxvt*print-pipe: string
+URxvt*print-pipe: "cat > /dev/null"
 ! URxvt*modifier: modifier
 ! URxvt*cutchars: string
 ! URxvt*answerbackString: string
