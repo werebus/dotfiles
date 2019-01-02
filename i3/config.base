@@ -85,11 +85,14 @@ mode "Resize" {
 }
 bindsym $mod+r mode "Resize"
 
-# start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
-
-# start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -fn '-*-terminus-medium-*-*-*-32-*-*-*-*-*-*-*'
+bindsym $mod+d exec "rofi -modi window,combi \
+                          -show combi \
+                          -combi-modi drun,run \
+                          -display-combi run \
+                          -location 2 \
+                          -show-icons \
+                          -theme solarized_alternate"
 
 bar {
         status_command i3status
