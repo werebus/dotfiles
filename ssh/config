@@ -1,11 +1,5 @@
 AddKeysToAgent yes
 
-Host rtic
-  Hostname transit-rtic.admin.umass.edu
-
-Host rtic-db
-  Hostname transit-rticdb.admin.umass.edu
-
 Host oldapp
   Hostname transit-app1.admin.umass.edu
   Port 1022
@@ -39,3 +33,7 @@ Host mmvu
 Host lamdt
   Hostname ssh.phx.nearlyfreespeech.net
   User werebus_lamdt
+
+Host home-control
+  Hostname home-control.home.wereb.us
+  ForwardAgent Yes
