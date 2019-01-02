@@ -23,6 +23,8 @@ export HISTIGNORE='ls:history:exit'
 #Vi mode for bash
 set -o vi
 
+export npm_config_prefix=~/.node_modules
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 if which direnv > /dev/null 2>&1; then
   eval "$(direnv hook $0)"
