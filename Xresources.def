@@ -128,12 +128,13 @@ URxvt*print-pipe: "cat > /dev/null"
 ! URxvt*secondaryScroll:                boolean
 ! URxvt*perl-lib:                       string
 ! URxvt*perl-eval:                      perl-eval
-! URxvt*perl-ext-common:                string
+URxvt*perl-ext-common: default,matcher,keyboard-select,confirm-paste,font-size
 ! URxvt*perl-ext:                       string
 ! URxvt*iso14755:                       boolean
 ! URxvt*iso14755_52:                    boolean
 ! URxvt*xrm:                            string
 ! URxvt*keysym.sym:                     keysym
+URxvt*keysym.M-Escape: perl:keyboard-select:activate
 ! URxvt*background.border:              boolean
 ! URxvt*background.expr:                string
 ! URxvt*background.interval:            seconds
@@ -155,4 +156,4 @@ URxvt*print-pipe: "cat > /dev/null"
 ! URxvt*tab-fg:                         colour
 ! URxvt*tabbar-bg:                      colour
 ! URxvt*tabbar-fg:                      colour
-! URxvt*url-launcher:                   string
+URxvt*url-launcher: firefox
