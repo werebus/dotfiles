@@ -18,6 +18,10 @@ Host app4
   Hostname af-transit-app4.admin.umass.edu
   ProxyCommand ssh -q -W %h:%p file1
 
+Host app5 af-transit-app5.admin.umass.edu
+  Hostname af-transit-app5.admin.umass.edu
+  ProxyCommand ssh -q -W %h:%p file1
+
 Host vs1
   Hostname transit-vs1.admin.umass.edu
   User root
